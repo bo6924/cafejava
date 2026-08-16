@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Café Java — Koffie, rust en een plekje om te werken{% endblock %}
+
+{% block body %}
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <span class="eyebrow">Sinds 2014 in het hart van de stad</span>
+                <h1>Goede koffie, een fijn tafeltje en alle tijd van de wereld.</h1>
+                <p>
+                    Café Java is de plek waar de geur van versgebrande bonen je binnen lokt.
+                    Neem een tafeltje, open je laptop of sla een boek open, en geniet van
+                    een rustige werkplek met de beste kop koffie van de stad.
+                </p>
+                <div class="hero-actions">
+                    <a href="{{ path('app_contact') }}" class="btn btn-primary">Reserveer een tafeltje</a>
+                    <a href="{{ path('app_about') }}" class="btn btn-outline">Bekijk openingstijden</a>
+                </div>
+            </div>
+            <div class="hero-illustration">
+                <svg viewBox="0 0 360 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustratie van een kop koffie op een tafeltje met een laptop">
+                    <ellipse cx="180" cy="300" rx="150" ry="20" fill="#1c1410" opacity="0.15"/>
+
+                    <!-- table -->
+                    <rect x="20" y="230" width="320" height="18" rx="6" fill="#6f4e37"/>
+                    <rect x="45" y="248" width="16" height="60" fill="#4a3020"/>
+                    <rect x="299" y="248" width="16" height="60" fill="#4a3020"/>
+
+                    <!-- laptop -->
+                    <g>
+                        <rect x="60" y="170" width="110" height="70" rx="6" fill="#2e1e14"/>
+                        <rect x="68" y="178" width="94" height="54" rx="3" fill="#e3ac72"/>
+                        <rect x="52" y="238" width="126" height="10" rx="3" fill="#1c1410"/>
+                    </g>
+
+                    <!-- coffee cup -->
+                    <g>
+                        <ellipse cx="255" cy="242" rx="42" ry="10" fill="#1c1410" opacity="0.2"/>
+                        <path d="M225 190 h60 l-8 46 a10 10 0 0 1 -10 8 h-24 a10 10 0 0 1 -10 -8 z" fill="#ffffff"/>
+                        <path d="M231 196 h48 l-6 40 a8 8 0 0 1 -8 6 h-20 a8 8 0 0 1 -8 -6 z" fill="#6f4e37"/>
+                        <path d="M285 200 q22 0 22 20 q0 20 -22 18" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- steam -->
+                    <g fill="none" stroke="#fbf3e8" stroke-width="5" stroke-linecap="round" opacity="0.85">
+                        <path d="M240 180 q-10 -16 0 -28 q10 -12 0 -26">
+                            <animate attributeName="d"
+                                values="M240 180 q-10 -16 0 -28 q10 -12 0 -26;
+                                        M240 180 q10 -16 0 -28 q-10 -12 0 -26;
+                                        M240 180 q-10 -16 0 -28 q10 -12 0 -26"
+                                dur="4s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M262 180 q-10 -16 0 -28 q10 -12 0 -26">
+                            <animate attributeName="d"
+                                values="M262 180 q10 -16 0 -28 q-10 -12 0 -26;
+                                        M262 180 q-10 -16 0 -28 q10 -12 0 -26;
+                                        M262 180 q10 -16 0 -28 q-10 -12 0 -26"
+                                dur="4s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+
+                    <!-- coffee beans decoration -->
+                    <g fill="#c68958">
+                        <ellipse cx="40" cy="200" rx="9" ry="6" transform="rotate(-30 40 200)"/>
+                        <ellipse cx="320" cy="160" rx="9" ry="6" transform="rotate(20 320 160)"/>
+                        <ellipse cx="335" cy="180" rx="9" ry="6" transform="rotate(-10 335 180)"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Waarom onze gasten blijven hangen</h2>
+            <p class="section-subtitle">
+                Niet zomaar een koffiebar: een plek om te werken, af te spreken of gewoon
+                even niks te doen — met een lekkere kop koffie binnen handbereik.
+            </p>
+            <div class="cards">
+                <div class="card">
+                    <span class="icon">📶</span>
+                    <h3>Gratis wifi</h3>
+                    <p>Snel internet en genoeg stopcontacten, zodat je hier probleemloos een middag kunt werken.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">☕</span>
+                    <h3>Vers gebrande bonen</h3>
+                    <p>Onze koffie wordt wekelijks vers gebrand door een lokale brander, om de hoek.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🥐</span>
+                    <h3>Huisgemaakt gebak</h3>
+                    <p>Van kaneelbroodjes tot chocoladetaart — alles wordt dagelijks vers gebakken.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">🪑</span>
+                    <h3>Rustige werkplekken</h3>
+                    <p>Ruime tafels, zachte stoelen en genoeg rustige hoekjes om je te concentreren.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="callout">
+                <h2>Kom gezellig langs</h2>
+                <p>Iedere dag geopend — reserveer je favoriete tafeltje of loop gewoon binnen.</p>
+                <a href="{{ path('app_contact') }}" class="btn btn-primary">Neem contact op</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Café Java{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="{{ path('app_home') }}" class="brand">
+                    <span class="brand-icon">☕</span>
+                    <span class="brand-text">Café Java</span>
+                </a>
+                <nav class="main-nav">
+                    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.main-nav').classList.toggle('open')">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul>
+                        <li><a href="{{ path('app_home') }}" class="{{ app.request.attributes.get('_route') == 'app_home' ? 'active' : '' }}">Home</a></li>
+                        <li><a href="{{ path('app_about') }}" class="{{ app.request.attributes.get('_route') == 'app_about' ? 'active' : '' }}">Over ons</a></li>
+                        <li><a href="{{ path('app_contact') }}" class="{{ app.request.attributes.get('_route') == 'app_contact' ? 'active' : '' }}">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-brand">
+                    <span class="brand-icon">☕</span>
+                    <span>Café Java</span>
+                </div>
+                <p>Kerkstraat 12, 1234 AB Koffiestad &middot; (012) 345 67 89</p>
+                <p class="footer-note">&copy; {{ "now"|date("Y") }} Café Java — voorbeeldwebsite, gemaakt om te leren met Symfony.</p>
+            </div>
+        </footer>
+    </body>
+</html>
